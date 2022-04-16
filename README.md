@@ -3,13 +3,12 @@
 
 ### Project Choice
 
-I'm choosing to create a real time messaging application.
+I'm choosing to create a messenging/forum app
 
 ### Project Description
 
-I'm making a simple messaging application using Socket.io, Express, Node and MongoDB.
+I'm making a simple messaging application Express, Node and MongoDB.
 
-My fall back would be a forum without socket.io
 
 ### Wire Frames
 
@@ -17,23 +16,24 @@ My fall back would be a forum without socket.io
 
 ### User Stories
 
-As a user I'd like to be able to sign in or register, at a minimum add any names for who's in the chat.
-Users want to know when the other person disconnects from the chat.
-Users want the incoming/outgoing messages to show who sent it correctly, if that's myself it should say "You: followed by any text I have sent".
-A user wants a way to end the chat.
-A user wants a option to create new chat rooms or switch rooms.
+As a user I'd like to be able to sign in or register
+I want to see when a message was sent and by who
+User wants to be able to edit a previous post
+A user wants to be able to delete a post
+A user wants a option to create new threads
 
 ### MVP
 
 Minimum I want the following
 
-- Add each persons name to the chat when it starts.
-- Show both sides when someone disconnects from the chat.
-- A way to end the chat.
-- Create new chat rooms.
+- CRUD on any posts
+- Ability to create new threads
+- Ability to sign in
+- CRUD on Users/Registration
 
 ### Stretch Goals
 
 - A system to register users and sign in users
-- A timeout where messages sent will delete themselves from the thread
 - Some type of animation or sound when messages are sent.
+- Bcrypt hashed passwords for storage
+- Try using socket.io or another npm only if I've completed everything else
