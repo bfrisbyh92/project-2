@@ -16,11 +16,11 @@ I'm making a simple messaging application Express, Node and MongoDB.
 
 ### User Stories
 
-As a user I'd like to be able to sign in or register
-I want to see when a message was sent and by who
-User wants to be able to edit a previous post
-A user wants to be able to delete a post
-A user wants a option to create new threads
+- As a user I'd like to be able to sign in or register
+- I want to see when a message was sent and by who
+- User wants to be able to edit a previous post
+- A user wants to be able to delete a post
+- A user wants a option to create new threads
 
 ### MVP
 
