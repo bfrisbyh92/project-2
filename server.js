@@ -11,6 +11,7 @@ const bcrypt = require('bcrypt');
 const passport = require('passport');
 const flash = require('express-flash');
 const sessions = require('express-session');
+const controllers = require('./controllers/article-controllers');
 
 const initializePassport = require('./passport-config');
 
@@ -19,8 +20,10 @@ initializePassport(passport,
  id => users.find(user => user.id === id)
     );
 
-const Users = require('./models/user');
 const users = [];
+const Users = require('./models/user');
+// Right now Authentication/Login works only locally. I will refactor code   
+// to use Mongodb instead and then uncomment the above line.
 
 
 app.use(express.json());
@@ -36,13 +39,14 @@ app.use(passport.session());
 app.use(cors());
 app.use(methodOverride('_method'));
 app.set('view-engine', 'ejs');
+app.use('/articles', controllers);
 
 
 
 const port = process.env.PORT || 3000;
 
 app.get('/', checkAuthenticated, (req, res) => {
-    res.render('../views/index.ejs', {name: req.user.name})
+    res.render('../views/index.ejs', {firstName: req.user.firstName})
 });
 
 app.get('/login', checkNotAuthenticated, (req, res) => {
@@ -113,11 +117,17 @@ function checkAuthenticated(req, res, next) {
   next()
 };
 
+// app.get('/home', (req, res) => {
+//     res.render('./views/index.ejs',{firstName: req.body.firstName})
+// });
+
 console.log(users)
 
 app.listen(port, () => {
     console.log(`Your forum is running on port ${port}`)
 });
+
+// module.exports = app;
 
 
 
