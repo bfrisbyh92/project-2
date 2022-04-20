@@ -9,10 +9,35 @@
   <title>Project-2-Forum</title>
 </head>
 <body>
-<h1>Hello <%= firstName %>!  // Login Success</h1>
-<form action="/logout?_method=DELETE" method="POST">
-  <button type="submit">Log Out</button>
-</form>
+<h1>Hello, Login Success</h1>
+<div class="container">
+<h1 class="mb-4">My Coding Forum</h1>
+<a href="/articles/new" class="btn btn-outline-success">New Post</a>
+
+<div class="container">
+    <h1 class="mb-4">Blog Articles</h1>
+    <a href="/articles/new" class="btn btn-success">New Article</a>
+
+    <% articles.forEach(article => { %>
+      <div class="card mt-4">
+        <div class="card-body">
+          <h4 class="card-title"><%= article.title %></h4>
+          <div class="card-subtitle text-muted mb-2">
+            <%= article.createdAt.toLocaleDateString() %>
+          </div>
+          <div class="card-text mb-2"><%= article.description %></div>
+          <a href="articles/<%= article.slug %>" class="btn btn-primary">Read More</a>
+          <a href="articles/edit/<%= article.slug %>" class="btn btn-info">Edit</a>
+          <form action="/articles/<%= article.id %>?_method=DELETE" method="POST" class="d-inline">
+            <button type="submit" class="btn btn-danger">Delete</button>
+          </form>
+
+        </div>
+      </div>
+    <% }) %>
+  </div>
+
+
 <a href="/register" class="btn btn-primary">Register</a>
 <a href="/login" class="btn btn-primary">Login</a>
 <a href="/home" class="btn btn-primary">Home</a>

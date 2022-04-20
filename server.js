@@ -11,9 +11,9 @@ const bcrypt = require('bcrypt');
 const passport = require('passport');
 const flash = require('express-flash');
 const sessions = require('express-session');
-const controllers = require('./controllers/article-controllers');
 
-const initializePassport = require('./passport-config');
+const controllers = require('./controllers/article-controllers')//(app,passport);
+const initializePassport = require('./passport-config')//(passport);
 
 initializePassport(passport,
  email => users.find(user => user.email === email),
