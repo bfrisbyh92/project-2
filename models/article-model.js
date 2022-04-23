@@ -1,11 +1,11 @@
 const mongoose = require('../db/connection');
-const marked = require('marked');
 const slugify = require('slugify');
+
 
 const ArticleSchema = new mongoose.Schema({
     title: {
-        required: true,
-        type: String
+        type: String,
+        required: true
     },
     description: {
         type: String
@@ -16,23 +16,20 @@ const ArticleSchema = new mongoose.Schema({
     },
     createdAt: {
         type: Date,
-        default: () => Date.now()
+        default: new Date()
     },
     slug: {
         type: String,
         unique: true,
         required: true
     }
+});
 
-},{timestamps: true});
-ArticleSchema.pre('validate', function(err, next) {
-    if (this.title) {
+ArticleSchema.pre('validate', function(next){
+    if(this.title){
         this.slug = slugify(this.title, {lower: true, strict: true})
-    }
-    if(next) next();
-    if(err) console.error(err);
-})
+    } 
+    next()
+});
 
-const Article = mongoose.model('article', ArticleSchema);
-
-module.exports = Article;
+module.exports = mongoose.model('Article', ArticleSchema);
