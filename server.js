@@ -27,7 +27,7 @@ const Users = require('./models/user');
 // Right now Authentication/Login works only locally. I will refactor code   
 // to use Mongodb instead and then uncomment the above line.
 
-
+app.use(express.static('public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(flash());
