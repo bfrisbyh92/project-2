@@ -36,11 +36,13 @@
             <div class="card">
                 <form action="/login" method="POST" class="box">
                     <h1>Login</h1>
+                    <p class="text-muted"> Please enter your email and password!</p>
+                    <div class="text-muted">
+                    <input required type="email" name="email" id="email" placeholder="Email Address"> 
                     <% if (messages.error) { %>
                     <%= messages.error %>
                         <% } %>
-                    <p class="text-muted"> Please enter your email and password!</p>
-                    <input required type="email" name="email" id="email" placeholder="Email Address"> 
+                        </div>
                     <input required type="password" name="password" id="password" placeholder="Password">
                     <input type="submit" name="submit">
                     <a class="d-block" href="/register">Don't have an account?</a>
