@@ -9,9 +9,11 @@
     <title>My forum</title>
 </head>
 <body>
-   <div class="container">
-       <h1 class="mb-2"><%= article.title %></h1>
-       <div class="text-muted mb-2"><%= article.createdAt.toLocaleDateString() %></div>
+        <!-- <div class="container mt-5">
+        <div class="card">
+        <div class="card-body"
+       <h1 class="card-title mt-5"><%= article.title %></h1>
+       <div class="card-subtitle text-muted mb-2"><%= article.createdAt.toLocaleDateString() %></div>
        <a href="/articles" class="btn btn-secondary">All Articles</a>
        <a href="/articles/edit/<%= article.id %>"
        class="btn btn-info">Edit</a>
@@ -19,9 +21,26 @@
                 method="POST">
                 <button type="submit" class="btn btn-danger">Delete</button>
                 </form>
-        <div>
+        <div class="card-text">
        <%= article.markdown %>
        </div>
-</div>
+       </div>
+</div> -->
+            <div class="container mt-5">
+            <div class="card mt-5">
+            <div class="card-body">
+              <h4 class="card-title"> <%= article.title %> </h4>
+            <div class="card-subtitle text-muted mb-2"><%= article.createdAt.toLocaleDateString() %></div>
+            <a href="/articles" class="btn btn-secondary">All Articles</a>
+       <a href="/articles/edit/<%= article.id %>"
+       class="btn btn-info">Edit</a>
+       <form class="d-inline" action="/articles/<%= article.id %>?_method=DELETE"
+                method="POST">
+                <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+              <div class="card-text mb-2"><%= article.markdown %></div>
+              </div>
+              </div>
+              </div>
 </body>
 </html>
