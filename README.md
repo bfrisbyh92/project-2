@@ -3,11 +3,11 @@
 
 ### Project Choice
 
-I'm choosing to create a messenging/forum app
+I'm choosing to create a blog/place to share interesting articles.
 
 ### Project Description
 
-I'm making a simple messaging application Express, Node and MongoDB.
+I'm going to create a blog styled app using Express, Node and MongoDB.
 
 
 ### Wire Frames
@@ -34,6 +34,9 @@ Minimum I want the following
 ### Stretch Goals
 
 - A system to register users and sign in users
-- Some type of animation or sound when messages are sent.
+- Add animations in css/bootstrap
 - Bcrypt hashed passwords for storage
+- Authentication on all pages
 - Try using socket.io or another npm only if I've completed everything else
+- Slugify the URL so it looks clean
+- Make blog presentable on all screen sizes
