@@ -1,8 +1,3 @@
-
-// const initializePassport = require('../passport-config');
-const checkAuthenticated = require('../server');
-const checkNotAuthenticated = require('../server');
-
 const express = require('express');
 const Article = require('../models/article-model');
 const router = express.Router();

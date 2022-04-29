@@ -47,22 +47,6 @@ background-attachment: fixed;
     transition: 0.25s
 }
 
-/* .box input[type="text"],
-.box input[type="password"] {
-    border: 0;
-    background: none;
-    display: block;
-    margin: 20px auto;
-    text-align: center;
-    border: 2px solid #3498db;
-    padding: 10px 10px;
-    width: 250px;
-    outline: none;
-    color: white;
-    border-radius: 24px;
-    transition: 0.25s
-} */
-
 .box h1 {
     color: white;
     text-transform: uppercase;
@@ -97,3 +81,20 @@ background-attachment: fixed;
 .forgot {
     text-decoration: underline
 }
+
+/* .container {
+  animation-duration: 7s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+} */
